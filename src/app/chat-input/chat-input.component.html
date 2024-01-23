@@ -1,5 +1,6 @@
 <form [formGroup]="inputForm">
     <div id="input-wrapper">
+        <div id="input-cta">&crarr;</div>
         <textarea id="input" (keypress)="validateInput($event)" formControlName="content"></textarea>
     </div>
 </form>

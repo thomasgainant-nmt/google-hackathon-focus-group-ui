@@ -8,13 +8,15 @@ import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ChatEntryComponent } from './chat-entry-left/chat-entry.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ParametersComponent } from './parameters/parameters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatInputComponent,
     ChatWindowComponent,
-    ChatEntryComponent
+    ChatEntryComponent,
+    ParametersComponent
   ],
   imports: [
     BrowserModule,
