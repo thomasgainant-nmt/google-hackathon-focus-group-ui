@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ChatEntry } from '../../models/chat-entry';
 import { BackendService } from '../backend.service';
+import { Subscription } from 'rxjs';
+import { env } from '../../env';
 
 @Component({
   selector: 'chat-window',
@@ -25,7 +27,19 @@ export class ChatWindowComponent {
     new ChatEntry("Lorem ipsum", true),
   ];
 
-  constructor(backend:BackendService){
+  private entriesSubscription:Subscription | undefined;
 
+  constructor(private backend:BackendService){
+    this.entriesSubscription = this.backend.entries.subscribe((newValue) => {
+      this.entries = newValue;
+    });
+
+    setInterval(() => {
+      this.backend.getEntries();
+    }, env.refreshInterval);
+  }
+
+  ngOnDestroy(){
+    this.entriesSubscription?.unsubscribe();
   }
 }

@@ -1,3 +1,5 @@
-<form>
-    <input id="input" (keypress)="validateInput($event)"/>
+<form [formGroup]="inputForm">
+    <div id="input-wrapper">
+        <textarea id="input" (keypress)="validateInput($event)" formControlName="content"></textarea>
+    </div>
 </form>

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { BackendService } from '../backend.service';
 
 @Component({
   selector: 'chat-input',
@@ -6,11 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './chat-input.component.css'
 })
 export class ChatInputComponent {
-  validateInput(e:KeyboardEvent){
-    e.preventDefault();
+  inputForm = new FormGroup({
+    content: new FormControl('')
+  });
 
+  constructor(private backend:BackendService){
+
+  }
+
+  validateInput(e:KeyboardEvent){
     if(e.key === "Enter"){
       console.log("Sending request...");
+      e.preventDefault();
+      this.backend.sendRequest(this.inputForm.get('content')?.value!);
     }
   }
 }

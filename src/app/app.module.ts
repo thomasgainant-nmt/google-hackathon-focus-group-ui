@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
 import { ChatEntryComponent } from './chat-entry-left/chat-entry.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import { ChatEntryComponent } from './chat-entry-left/chat-entry.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -40,6 +40,8 @@ html, body, #root{
 }
     #title img{
         width: 100%;
+        box-sizing: border-box;
+        padding: 6px;
     }
 
 #window{
@@ -81,13 +83,23 @@ html, body, #root{
         color: #333
     }
 
-#input{
+#input-wrapper{
     height: 100px;
     width: 100%;
     margin: 0;
     margin-top: 15px;
-    padding: 0;
 
+    background-color: #efefef;
     border: #999 solid 1px;
     border-radius: 6px 6px 6px 6px;
 }
+    #input{
+        height: 100px;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 6px;
+
+        resize: none;
+        background: none;
+    }
