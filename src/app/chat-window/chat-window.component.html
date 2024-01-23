@@ -1,2 +1,4 @@
 <div id="title"><img src="../../assets/logo.png"/></div>
-<div id="window"></div>
+<div id="window">
+    <chat-entry *ngFor="let entry of entries" [content]="entry.content" [left]="entry.left"></chat-entry>
+</div>

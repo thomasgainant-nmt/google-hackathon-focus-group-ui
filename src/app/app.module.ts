@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
 import { ChatWindowComponent } from './chat-window/chat-window.component';
+import { ChatEntryComponent } from './chat-entry-left/chat-entry.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatInputComponent,
-    ChatWindowComponent
+    ChatWindowComponent,
+    ChatEntryComponent
   ],
   imports: [
     BrowserModule,
