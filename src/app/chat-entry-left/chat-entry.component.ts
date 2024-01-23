@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ChatEntryComponent {
   @Input() content:string = "";
-  @Input() left:boolean = false;
+  @Input() isAI:boolean = false;
 }

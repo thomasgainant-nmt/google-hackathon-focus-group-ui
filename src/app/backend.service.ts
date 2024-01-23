@@ -14,8 +14,8 @@ export class BackendService {
   constructor(private http: HttpClient) { }
 
   getEntries(){
-    this.http.get<ChatEntry[]>(env.getURL).subscribe((entries:ChatEntry[]) => {
-      this.entries.next(entries);
+    this.http.get(env.getURL).subscribe((res:any) => {
+      this.entries.next(res.entries!);
     });
   }
 

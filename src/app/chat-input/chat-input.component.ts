@@ -21,6 +21,7 @@ export class ChatInputComponent {
       console.log("Sending request...");
       e.preventDefault();
       this.backend.sendRequest(this.inputForm.get('content')?.value!);
+      this.inputForm.get('content')?.patchValue('');
     }
   }
 }

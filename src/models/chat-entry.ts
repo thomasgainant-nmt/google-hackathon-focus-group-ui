@@ -1,9 +1,9 @@
 export class ChatEntry{
     public content:string = "";
-    public left:boolean = false;
+    public isAI:boolean = false;
 
-    constructor(content:string, left:boolean){
+    constructor(content:string, isAI:boolean){
         this.content = content;
-        this.left = left;
+        this.isAI = isAI;
     }
 }
