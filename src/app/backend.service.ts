@@ -18,7 +18,7 @@ export class BackendService {
   constructor(private http: HttpClient) { }
 
   getEntries(){
-    this.http.get(env.getURL+"/"+this.sessionID).subscribe((res:any) => {
+    this.http.get(env.getURL+"?sessionID="+this.sessionID).subscribe((res:any) => {
       this.entries.next(res.prompts!);
     });
   }
@@ -30,7 +30,7 @@ export class BackendService {
       value.push(new ChatEntry(content, true));
       this.entries.next(value);
     }
-    this.http.post(env.sendURL+"/"+this.sessionID, {"prompt": value}).subscribe(() => {
+    this.http.post(env.sendURL+"?sessionID="+this.sessionID, {"prompt": value}).subscribe(() => {
       
     });
   }
