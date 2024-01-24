@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ChatEntryComponent {
   @Input() content:string = "";
   @Input() isAI:boolean = false;
+  @Input() isWaiting:boolean = false;
 
   public customStyle:any = {};
 

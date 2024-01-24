@@ -28,11 +28,13 @@ export class BackendService {
     //if(value == null){
       //value = [];
       value.push(new ChatEntry(content, false));
+      value.push(new ChatEntry("...", true, true));
       this.entries.next(value);
     //}
     this.http.post(env.sendURL+"?sessionID="+this.sessionID, {"prompt": value}).subscribe((response:any) => {
       console.log(response);
       let newValue = this.entries.getValue();
+      newValue?.splice(-1, 1);
       newValue?.push(new ChatEntry(response.response, true));
       this.entries.next(newValue);
     });

@@ -1,1 +1,1 @@
-<div [class]="'chat-entry ' + (isAI ? 'chat-entry-left' : 'chat-entry-right')"><div class="content" [style]="customStyle">{{ content }}</div></div>
+<div [class]="'chat-entry ' + (isAI ? ' chat-entry-left ' : ' chat-entry-right ') + (isWaiting ? ' chat-entry-waiting ' : '')"><div class="content" [style]="customStyle"><div class="text">{{ content }}</div></div></div>

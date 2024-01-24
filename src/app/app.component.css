@@ -99,6 +99,16 @@ html, body, #root{
         color: #666;
     }
 
+    @keyframes shake {
+        0%   {transform:rotate(0deg); }
+        25%  {transform:rotate(15deg); }
+        50%  {transform:rotate(-15deg); }
+        100% {transform:rotate(0deg); }
+    }
+    .chat-entry-left.chat-entry-waiting .content .text{
+        animation: 2s infinite alternate shake;
+    }
+
 .chat-entry-right{
     text-align: right;
 }

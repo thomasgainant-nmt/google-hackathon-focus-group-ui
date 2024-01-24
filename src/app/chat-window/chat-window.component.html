@@ -1,5 +1,5 @@
 <div id="title"><img src="../../assets/logo.png"/></div>
 <parameters id="parameters"></parameters>
 <div id="window">
-    <chat-entry *ngFor="let entry of entries" [content]="entry.content" [isAI]="entry.isAI"></chat-entry>
+    <chat-entry *ngFor="let entry of entries" [content]="entry.content" [isAI]="entry.isAI" [isWaiting]="entry.isWaiting"></chat-entry>
 </div>
