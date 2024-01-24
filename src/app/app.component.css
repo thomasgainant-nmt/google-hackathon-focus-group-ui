@@ -77,12 +77,17 @@ html, body, #root{
 .chat-entry{
     display: inline-block;
     width: 100%;
+    overflow: hidden;
 }
     .chat-entry .content{
         display: inline-block;
+        width: auto;
+        max-width: 0%;
+        overflow: hidden;
         margin: 6px;
-        padding: 6px;;
+        padding: 0;
         border-radius: 6px 6px 6px 6px;
+        transition: max-width 0.5s ease-in-out;
     }
 
 .chat-entry-left{

@@ -8,4 +8,15 @@ import { Component, Input } from '@angular/core';
 export class ChatEntryComponent {
   @Input() content:string = "";
   @Input() isAI:boolean = false;
+
+  public customStyle:any = {};
+
+  ngOnInit(){
+    setTimeout(() => {
+      this.customStyle = {
+        "max-width": "100%",
+        "padding": "6px"
+      };;
+    }, 500);
+  }
 }

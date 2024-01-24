@@ -34,9 +34,9 @@ export class ChatWindowComponent {
       this.entries = newValue;
     });
 
-    setInterval(() => {
+    /*setInterval(() => {
       this.backend.getEntries();
-    }, env.refreshInterval);
+    }, env.refreshInterval);*/
   }
 
   ngOnDestroy(){
