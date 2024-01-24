@@ -24,8 +24,13 @@ export class BackendService {
   }
 
   sendRequest(content:string){
-    this.entries.getValue().push(new ChatEntry(content, true));
-    this.http.post(env.sendURL+"/"+this.sessionID, {"prompt": this.entries}).subscribe(() => {
+    let value = this.entries.getValue();
+    if(value == null){
+      value = [];
+      value.push(new ChatEntry(content, true));
+      this.entries.next(value);
+    }
+    this.http.post(env.sendURL+"/"+this.sessionID, {"prompt": value}).subscribe(() => {
       
     });
   }
